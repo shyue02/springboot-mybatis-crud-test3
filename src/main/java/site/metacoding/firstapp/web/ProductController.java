@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 import site.metacoding.firstapp.domain.Product;
 import site.metacoding.firstapp.domain.ProductDao;
 import site.metacoding.firstapp.service.ProductService;
-import site.metacoding.firstapp.web.dto.CMRespDto;
+import site.metacoding.firstapp.web.dto.response.CMRespDto;
 
 @AllArgsConstructor
 @Controller

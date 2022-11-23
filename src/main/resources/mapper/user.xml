@@ -13,6 +13,10 @@
 		resultType="site.metacoding.firstapp.domain.User">
 		SELECT * FROM user ORDER BY user_id DESC
 	</select>
+	
+	<select id="login" resultType="site.metacoding.firstapp.domain.User">
+		SELECT * FROM user where user_name=#{userName} AND user_password=#{userPassword}
+	</select>
 
 	<insert id="insert" useGeneratedKeys="true"
 		keyProperty="userId">
