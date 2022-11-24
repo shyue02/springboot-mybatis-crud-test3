@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.User;
 import site.metacoding.firstapp.domain.UserDao;
+import site.metacoding.firstapp.web.dto.request.JoinDto;
 import site.metacoding.firstapp.web.dto.request.LoginDto;
 
 @RequiredArgsConstructor
@@ -39,6 +40,15 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/joinForm")
+	public String joinForm() {
+		return "user/joinForm";
+	}
 	
+	@PostMapping("join")
+	public String join(JoinDto joinDto) {
+		userDao.insert(joinDto.toEntity());
+		return "redirect:/loginForm";
+	}
 }
 

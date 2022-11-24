@@ -13,4 +13,12 @@ public class User {
 	private String userPassword;
 	private String userEmail;
 	private Timestamp createdAt;
+	
+	
+	public User(String userName, String userPassword, String userEmail) {
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.userEmail = userEmail;
+	}
+	
 }
