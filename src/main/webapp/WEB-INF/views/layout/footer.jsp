@@ -2,7 +2,8 @@
 <br />
 <hr/>
 <div class="jumbotron text-center" style="margin-bottom: 0">
-	<p>🏴Product 숙제</p>
+	<p>🍎쇼핑몰🍎</p>
+	<p>📞010-1111-2222</p>
 </div>
 </body>
 </html>

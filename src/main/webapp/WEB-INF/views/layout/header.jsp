@@ -19,7 +19,7 @@
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/product">Product</a>
+			<a class="navbar-brand" href="/product">🍑쇼핑몰🍑</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 				<span class="navbar-toggler-icon"></span>
