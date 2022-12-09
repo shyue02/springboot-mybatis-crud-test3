@@ -26,6 +26,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/">상품목록</a>
 					<c:choose>
 						<c:when test="${empty principal}">
 							<li class="nav-item"><a class="nav-link" href="/loginForm">로그인</a></li>				
@@ -34,6 +35,7 @@
 						</c:when>
 						<c:otherwise>
  					<!--	<li class="nav-item"><a class="nav-link" href="/product/add">상품등록</a></li>  -->
+							<li class="nav-item"><a class="nav-link" href="/orders/ordersList">구매목록</a></li> 					
 							<li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
 						</c:otherwise>
 					</c:choose>	

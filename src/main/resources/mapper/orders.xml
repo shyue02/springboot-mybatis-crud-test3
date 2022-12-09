@@ -11,7 +11,8 @@
 
 	<select id="findAll"
 		resultType="site.metacoding.firstapp.domain.Orders">
-		SELECT * FROM orders ORDER BY orders_id DESC
+		SELECT * FROM orders 
+		WHERE user_id = #{userId}
 	</select>
 
 	<insert id="insert" useGeneratedKeys="true"
