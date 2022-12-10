@@ -36,4 +36,9 @@
 		DELETE FROM product WHERE product_id = #{productId}
 	</delete>
 
+	<update id="productQtyUpdate">
+		UPDATE product SET product_qty = product_Qty - #{ordersQty}
+		WHERE product_id = #{productId}
+	</update>
+
 </mapper>

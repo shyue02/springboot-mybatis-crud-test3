@@ -4,16 +4,18 @@
 
 <div class="container">
 	<h3>상품 상세보기 페이지</h3>
-	<form action="/orders/${productId}}" method="post">
-		<input id="id" type="hidden" value="${detail.productId}">
+	<form action="/orders/${detail.productId}" method="post" >
+		<input name="ordersid" type="hidden" value="${detail.productId}">
+		<input name="ordersName" type="hidden" value="${detail.productName}">
+		<input name="ordersPrice" type="hidden" value="${detail.productPrice}">
 		<table class="table table-striped">
 			<thead>
-				<tr>
+				<tr>	
 					<th>상품명</th>
 					<th>상품가격</th>
 					<th>상품수량</th>
 					<th>구매수량</th>
-				</tr>
+			 	</tr>
 			</thead>
 			<tbody>
 				<tr>

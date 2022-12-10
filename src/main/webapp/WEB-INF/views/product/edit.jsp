@@ -5,7 +5,7 @@
 <div class="container">
 	<h3>상품 수정 페이지</h3>
 	<form action="/product/${edit.productId}/edit" method="post">
-		<input id="id" type="hidden" value="${edit.productId}">
+		<input name="id" type="hidden" value="${edit.productId}">
 		<table class="table table-striped">
 			<thead>
 				<tr>
