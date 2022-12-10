@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.Orders;
 import site.metacoding.firstapp.domain.OrdersDao;
+import site.metacoding.firstapp.domain.Product;
 import site.metacoding.firstapp.domain.ProductDao;
 import site.metacoding.firstapp.domain.User;
 import site.metacoding.firstapp.web.dto.request.OrdersDto;
@@ -27,14 +28,14 @@ public class OrdersController {
 	@GetMapping("/orders/ordersList")
 	public String ordersListForm(Model model) {
 		User principal = (User) session.getAttribute("principal");
-
+		
 //		List<Orders> getOrderList = ordersDao.findAll(principal.getUserId());
 //		model.addAttribute("ordersproduct", getOrderList);
 		model.addAttribute("ordersproduct", ordersDao.findAll(principal.getUserId()));
-
+		
 		return "orders/ordersList";
 	}
-
+	
 	@PostMapping("/orders/{productId}")
 	public String ordersList(@PathVariable Integer productId, OrdersDto ordersDto) {
 		User principal = (User) session.getAttribute("principal");
@@ -42,6 +43,12 @@ public class OrdersController {
 		if(principal == null) {
 			return "redirect:/loginForm";
 		}
+		
+		// 상품수량 - 구매수량 < 0
+		Product productPS = productDao.findById(productId);
+		if (productPS.getProductQty() - ordersDto.getOrdersQty() < 0) {
+			return "redirect:/product/{productId}";
+		} 
 		
 		// 상품 구매 -> 구매목록 페이지로
 		productDao.productQtyUpdate(ordersDto);
